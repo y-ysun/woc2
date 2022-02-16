@@ -84,4 +84,7 @@
             </table>
         </div>
     </div>
+    <p>
+        <a href="${pageContext.request.contextPath}/book/goOut">注销</a>
+    </p>
 </div>

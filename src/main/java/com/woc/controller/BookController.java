@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -95,5 +96,18 @@ public class BookController {
 
         return "allBook";
     }
+
+
+    @RequestMapping("/login")
+    public String login(HttpSession session,String username,String password){
+        session.setAttribute("userLoginInfo",username);
+        return "allBook";
+    }
+    @RequestMapping("goOut")
+    public String goOut(HttpSession session){
+        session.removeAttribute("userLoginInfo");
+        return "allBook";
+    }
+
 
 }

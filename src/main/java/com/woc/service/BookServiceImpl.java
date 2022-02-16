@@ -3,12 +3,13 @@ package com.woc.service;
 
 import com.woc.dao.BookMapper;
 import com.woc.pojo.Books;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
 public class BookServiceImpl implements BookService{
     //service调dao层，组合Dao
-    //@Autowired
+    @Autowired
     private BookMapper bookMapper;
 
     public void setBookMapper(BookMapper bookMapper) {
